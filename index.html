@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Laboratorio JavaScript y AJAX - Geovanny Ferro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Laboratorio: Tecnologías JavaScript y AJAX</h1>
+    
+    <!-- Menú de navegación principal -->
+    <div class="menu">
+        <button onclick="mostrarEjercicio('palindromo')">Verificar Palíndromo</button>
+        <button onclick="mostrarEjercicio('mayor')">Mayor de Dos Números</button>
+        <button onclick="mostrarEjercicio('vocales')">Extraer Vocales</button>
+        <button onclick="mostrarEjercicio('contarVocales')">Contar Vocales</button>
+        <button onclick="mostrarEjercicio('ajax')">Práctica AJAX</button>
+    </div>
+
+    <!-- Formulario Ejercicio 1: Palíndromo -->
+    <form id="palindromoForm" class="ejercicio-form" style="display:none;" onsubmit="ejecutarPalindromo(event)">
+        <label><b>1. Detector de Palíndromo:</b> Ingresa una palabra o frase:</label><br>
+        <input type="text" id="cadena" required>
+        <button type="submit">Verificar Palíndromo</button>
+    </form>
+
+    <!-- Formulario Ejercicio 2: Mayor de Dos Números -->
+    <form id="mayorForm" class="ejercicio-form" style="display:none;" onsubmit="ejecutarMayor(event)">
+        <label><b>2. Comparar Números:</b></label><br>
+        <label>Número 1:</label><input type="number" id="num1" required>
+        <label>Número 2:</label><input type="number" id="num2" required>
+        <button type="submit">Comparar Números</button>
+    </form>
+
+    <!-- Formulario Ejercicio 3: Extraer Vocales -->
+    <form id="vocalesForm" class="ejercicio-form" style="display:none;" onsubmit="ejecutarVocales(event)">
+        <label><b>3. Extraer Vocales:</b> Ingresa una frase:</label><br>
+        <input type="text" id="fraseVocales" required>
+        <button type="submit">Mostrar Vocales</button>
+    </form>
+
+    <!-- Formulario Ejercicio 4: Contar Vocales -->
+    <form id="contarVocalesForm" class="ejercicio-form" style="display:none;" onsubmit="ejecutarContar(event)">
+        <label><b>4. Contar Vocales:</b> Ingresa una frase:</label><br>
+        <input type="text" id="fraseContar" required>
+        <button type="submit">Contar Vocales</button>
+    </form>
+
+    <!-- Sección de Práctica AJAX -->
+    <div id="ajaxSection" class="ejercicio-form" style="display:none;">
+        <h2>Práctica AJAX</h2>
+        <label><b>URL del recurso a consultar:</b></label><br>
+        <input type="text" id="recurso" style="width: 450px;">
+        <button id="enviar" type="button">Mostrar Contenidos</button>
+        
+        <h3>Contenidos de la página:</h3>
+        <div id="contenidos" class="panel"></div>
+        
+        <h3>Estados de la petición:</h3>
+        <div id="estados" class="panel"></div>
+        
+        <h3>Cabeceras HTTP de la respuesta:</h3>
+        <div id="cabeceras" class="panel"></div>
+        
+        <h3>Código de estado:</h3>
+        <div id="codigo" class="panel"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
